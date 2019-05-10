@@ -1,8 +1,7 @@
 import psutil
 import pync
 import os
-from threading import Event
-import calendar
+import time
 import tkinter as tk
 from tkinter import messagebox
 
@@ -19,19 +18,19 @@ def nohup():
 
 if battpercent == 60 and discharging == True:
     pync.notify('Your battery is at 60%, please charge!',title="Battery Reminder")
-    Event().wait(timeout=60)
+    time.sleep(60)
 
 elif battpercent == 50 and discharging == True:
     pync.notify('Your battery is at 50%, please charge!',title="Battery Reminder")
-    Event().wait(timeout=60)
+    time.sleep(60)
 
 elif battpercent == 40 and discharging == True:
     pync.notify('Your battery is at 40%, please charge!',title="Battery Reminder")
-    Event().wait(timeout=60)
+    time.sleep(60)
 
 elif battpercent == 30 and discharging == True:
     pync.notify('Your battery is at 30%, please charge!',title="Battery Reminder")
-    Event().wait(timeout=60)
+    time.sleep(60)
 
 if not hasattr(psutil, "sensors_battery"):
     messagebox.showwarning('Sorry, but this platform is currently not supported.','Unsupported')
