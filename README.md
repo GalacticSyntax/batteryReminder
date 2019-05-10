@@ -1,5 +1,7 @@
 # Usage and Installation Instructions
 
+Thank you for your interest in my program! Read the instructions below to get everything up and running!
+
 ## Windows
 *Note: Windows XP and lower are NOT supported.*\
 \
