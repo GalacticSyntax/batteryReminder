@@ -31,6 +31,17 @@ elif battpercent == 40 and discharging == True:
 elif battpercent == 30 and discharging == True:
     pync.notify('Your battery is at 30%, please charge!',title="Battery Reminder")
     time.sleep(60)
+    
+elif battery.power_plugged == True:
+    if battpercent < 100:
+        pass
+    else:
+        pync.notify('Your battery is fully charged! Please unplug the charger!',title="Battery Reminder")
+        time.sleep(60)
+    discharging = False
+    
+elif battery.power_plugged == False:
+    discharging = True
 
 if not hasattr(psutil, "sensors_battery"):
     messagebox.showwarning('Sorry, but this platform is currently not supported.','Unsupported')
