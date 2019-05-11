@@ -13,6 +13,8 @@ battpercent = battery.percent
 root = tk.Tk()
 root.withdraw()
 
+notify2.init('batteryReminder')
+
 def nohup():
     dirpath = os.path.realpath(__file__)
     os.system(f"nohup python3 {dirpath}")
@@ -26,26 +28,31 @@ if battery is None:
     sys.exit()
 
 if battpercent == 60 and discharging == True:
-    notify2.Notification('Battery Reminder',"Your battery is at 60%, please charge!")
+    sxp = notify2.Notification('Battery Reminder',"Your battery is at 60%, please charge!")
+    sxp.show()
     time.sleep(60)
 
 elif battpercent == 50 and discharging == True:
-    notify2.Notification('Battery Reminder',"Your battery is at 50%, please charge!")
+    fip = notify2.Notification('Battery Reminder',"Your battery is at 50%, please charge!")
+    fip.show()
     time.sleep(60)
 
 elif battpercent == 40 and discharging == True:
-    notify2.Notification('Battery Reminder',"Your battery is at 40%, please charge!")
+    fop = notify2.Notification('Battery Reminder',"Your battery is at 40%, please charge!")
+    fop.show()
     time.sleep(60)
 
 elif battpercent == 30 and discharging == True:
-    notify2.Notification('Battery Reminder',"Your battery is at 30%, please charge!")
+    thp = notify2.Notification('Battery Reminder',"Your battery is at 30%, please charge!")
+    thp.show()
     time.sleep(60)
     
 elif battery.power_plugged == True:
     if battpercent < 100:
         pass
     else:
-        notify2.Notification('Battery Reminder',"Your battery is fully charged! Please unplug the charger!")
+        fc = notify2.Notification('Battery Reminder',"Your battery is fully charged! Please unplug the charger!")
+        fc.show()
         time.sleep(60)
     discharging = False
     
