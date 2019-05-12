@@ -2,6 +2,7 @@ import psutil
 import pync
 import os
 import time
+import sys
 import tkinter as tk
 from tkinter import messagebox
 
@@ -45,6 +46,8 @@ elif battery.power_plugged == False:
 
 if not hasattr(psutil, "sensors_battery"):
     messagebox.showwarning('Sorry, but this platform is currently not supported.','Unsupported')
+    sys.exit()
 
 if battery is None:
     messagebox.showerror('This program has detected that there is no battery installed on this computer. Click OK to close this window.','No Battery')
+    sys.exit()
